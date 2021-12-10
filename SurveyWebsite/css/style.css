@@ -1,0 +1,39 @@
+body {
+    background-color: 	#E8E8E8;
+    padding: 10px;
+}
+
+.grid-container {
+    width: 800px;
+    background-color: white;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.head {
+    width: auto;
+    height: 10px;
+    margin-bottom: 20px;
+    background-color: black;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+form {
+    margin: 20px;
+}
+
+.button {
+    width: 100px;
+    border-radius: 5px;
+    float: right;
+}
+
+input[type=text] {
+    border-radius: 5px;
+}
+
+textarea {
+    border-radius: 5px;
+}
+
