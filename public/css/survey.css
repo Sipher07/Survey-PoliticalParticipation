@@ -1,0 +1,84 @@
+
+
+body {
+
+    display: flex;
+    font-family: Helvetica,Arial,sans-serif;
+    background-color: 	#E8E8E8;
+    padding: 10px;
+  }
+  
+  
+  
+  
+
+.grid-container {
+    width: 650px;
+    background-color: white;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.head {
+    width: auto;
+    height: 10px;
+    margin-bottom: 20px;
+    background-color: black;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+form {
+    margin: 20px;
+}
+
+.button {
+    width: 100px;
+    border-radius: 5px;
+    
+    
+}
+
+input[type=text] {
+    border-radius: 5px;
+}
+
+textarea {
+    border-radius: 5px;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(-135deg, #144aad, #e9d30e);
+}
+
+.desc {
+    font-family: Roboto,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: .2px;
+    line-height: 20px;
+    color: #202124;
+    margin-top: 12px;
+    text-align: justify;
+}
+
+.radio-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
