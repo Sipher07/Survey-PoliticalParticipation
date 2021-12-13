@@ -1,4 +1,4 @@
-input[type=checkbox] + label {
+/*input[type=checkbox] + label {
     display: block;
     margin: 0.2em;
     cursor: pointer;
@@ -43,4 +43,4 @@ input[type=checkbox] + label {
     transform: scale(1);
     background-color: #bfb;
     border-color: #bfb;
-  } 
+  } */
