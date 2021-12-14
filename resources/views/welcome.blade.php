@@ -35,7 +35,7 @@
     <div class="container px-5">
         <div class="row gx-5 align-items-center">
             <div class="col-lg-6 order-lg-2">
-                <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/Aristotle.jpeg" alt="..." /></div>
+                <div class="p-5"><img class="img-fluid rounded-circle" src="{{ asset('assets/img/Aristotle.png') }}" alt="Aristotle" /></div>
             </div>
             <div class="col-lg-6 order-lg-1">
                 <div class="p-5">
@@ -51,7 +51,7 @@
     <div class="container px-5">
         <div class="row gx-5 align-items-center">
             <div class="col-lg-6">
-                <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/Roosevelts.jpg" alt="..." /></div>
+                <div class="p-5"><img class="img-fluid rounded-circle" src="{{ asset('assets/img/Roosevelts.jpg') }}" alt="Roosevelts" /></div>
             </div>
             <div class="col-lg-6">
                 <div class="p-5">
@@ -67,7 +67,7 @@
     <div class="container px-5">
         <div class="row gx-5 align-items-center">
             <div class="col-lg-6 order-lg-2">
-                <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/Unite.jpg" alt="..." /></div>
+                <div class="p-5"><img class="img-fluid rounded-circle" src="{{ asset('assets/img/Ronald.jpg') }}" alt="Ronald Reagan" /></div>
             </div>
             <div class="col-lg-6 order-lg-1">
                 <div class="p-5">
@@ -80,7 +80,7 @@
 </section>
 <!-- Footer-->
 <footer class="py-5 bg-black">
-    <div class="container px-5"><p class="m-0 text-center text-white small">Political Participation Analyzer</p></div>
+    <div class="container px-5"><p class="m-0 text-center text-white small">PAMANTASAN NG LUNGSOD NG MUNTINLUPA</p></div>
 </footer>
 
 <div class="modal fade" id="loginModal" tabindex="-1">
