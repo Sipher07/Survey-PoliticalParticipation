@@ -23,9 +23,9 @@
 <header class="masthead text-center text-white">
     <div class="masthead-content">
         <div class="container px-5">
-            <h1 class="masthead-heading mb-0">PAMANTASAN NG LUNGSOD</h1>
-            <h2 class="masthead-subheading mb-0">NG MUNTINLUPA</h2>
-            <a class="btn btn-primary btn-xl rounded-pill mt-5" href="../index.php">Answer the Political Survey</a>
+            <h1 class="masthead-heading mb-0">Political Participation Analyzer</h1>
+            
+            <a class="btn btn-primary btn-xl rounded-pill mt-5" href="/survey">Answer the Political Survey</a>
         </div>
     </div>
     
@@ -35,12 +35,12 @@
     <div class="container px-5">
         <div class="row gx-5 align-items-center">
             <div class="col-lg-6 order-lg-2">
-                <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/01.jpg" alt="..." /></div>
+                <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/Aristotle.jpeg" alt="..." /></div>
             </div>
             <div class="col-lg-6 order-lg-1">
                 <div class="p-5">
-                    <h2 class="display-4">For those about to rock...</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+                    <h2 class="display-4">Aristotle</h2>
+                    <p>Democracy arises out of the notion that those who are equal in any respect are equal in all respects; because men are equally free, they claim to be absolutely equal.</p>
                 </div>
             </div>
         </div>
@@ -51,12 +51,12 @@
     <div class="container px-5">
         <div class="row gx-5 align-items-center">
             <div class="col-lg-6">
-                <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/02.jpg" alt="..." /></div>
+                <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/Roosevelts.jpg" alt="..." /></div>
             </div>
             <div class="col-lg-6">
                 <div class="p-5">
-                    <h2 class="display-4">We salute you!</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+                    <h2 class="display-4">Franklin D. Roosevelt</h2>
+                    <p>Let us never forget that government is ourselves and not an alien power over us. The ultimate rulers of our democracy are not a President and senators and congressmen and government officials, but the voters of this country.</p>
                 </div>
             </div>
         </div>
@@ -67,12 +67,12 @@
     <div class="container px-5">
         <div class="row gx-5 align-items-center">
             <div class="col-lg-6 order-lg-2">
-                <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/03.jpg" alt="..." /></div>
+                <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/Unite.jpg" alt="..." /></div>
             </div>
             <div class="col-lg-6 order-lg-1">
                 <div class="p-5">
-                    <h2 class="display-4">Let there be rock!</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+                    <h2 class="display-4">Ronald Reagan</h2>
+                    <p>Government exists to protect us from each other. Where government has gone beyond its limits is in deciding to protect us from ourselves.</p>
                 </div>
             </div>
         </div>
@@ -80,7 +80,7 @@
 </section>
 <!-- Footer-->
 <footer class="py-5 bg-black">
-    <div class="container px-5"><p class="m-0 text-center text-white small">Copyright &copy; Your Website 2021</p></div>
+    <div class="container px-5"><p class="m-0 text-center text-white small">Political Participation Analyzer</p></div>
 </footer>
 
 <div class="modal fade" id="loginModal" tabindex="-1">
@@ -91,16 +91,12 @@
 
 				<form method="POST" action="{{ route('post.login') }}">
 					<input name="_token" type="hidden" value="{{ csrf_token() }}"/>
-					<div class="input-group">
-						<label for="username" class="form-label">Username</label>
-						<input type="text" class="form-control" id="username" name="username">
+					<div class="input-group mt-2">
+						<input type="text" class="form-control" id="username" name="username" placeholder="username">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="password">
 					</div>
 					<div class="input-group">
-						<label for="password" class="form-label">Password</label>
-						<input type="password" class="form-control" id="password" name="password">
-					</div>
-					<div class="input-group">
-						<button type="submit" class="btn btn-primary"></button>
+						<button type="submit" class="btn btn-primary">Log In</button>
 					</div>
 			    </form>
 			</div>
