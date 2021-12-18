@@ -1,100 +1,222 @@
 @extends('layouts._layout')
 
 @section('style')
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
 <link rel="stylesheet" href="{{ asset('css/survey.css') }}">
-<link rel="stylesheet" href="{{ asset('css/radio.css') }}"> 
+<style>
+    body {
+        height: 100vh;
+        width: 100vw;
+        background-image: url("/assets/quiz_bg.png");
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: cover;
+    }
+</style>
 @endsection
 
 @section('content')
+<div class="main-container">
+    <div id="p_card">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 id="p_text">What is your name?</h2>
 
-<div class="grid-container full fluid mt-5 mb-5">
-    <div class="head"></div>
-    <form method="POST" action="{{ route('survey.submit') }}">
-        <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+                <input type="text" class="form-control quiz-text" name="name" id="name" autofocus="true" />
 
-        <h3>Analysis on the Level of Political Participation of the citizens from each Barangay in Muntinlupa City: A Survey</h3>
-        <p class="desc"> 
-            Good day!
-            <br><br>
-            We are fourth-year college students from the Pamantasan ng Lungsod ng Muntinlupa, 
-            Bachelor of Science in Computer Science program. As part of our requirements as
-            graduating students, we are here to conduct an online survey for our thesis entitled, 
-            Analysis on the Level of Political Participation of the citizens from each Barangay in 
-            Muntinlupa City using K-Means Clustering Algorithm
-            <br><br>
-            By participating in this survey, we are therefore granted permission to utilize the data we have 
-            acquired. However,rest assured that all of the information gathered here will only be used for 
-            thesis and research purposes only and that we solemnly abide by the Republic Act 
-            10173 - Data Privacy Act of 2012.
-        </p>
-        <hr>
+                <select class="form-select quiz-text" id="age" name="age">
+                    @for($i = 18; $i <= 90; $i++)
+                        <option value="{{ $i }}">{{ $i }}</option>
+                    @endfor
+                </select>
 
-        <div>
-            <label class="form-label for="name">Name (Optional)</label>
-            <input class="form-control" type="text" id="name" name="name">
-        </div>
+                <select class="form-select quiz-text" id="gender" name="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
 
-        <div>
-            <label class="form-label for="age">Age</label>
-            <select class="form-select" id="age" name="age" required>
-                @for($i = 18; $i <= 90; $i++)
-                    <option value="{{ $i }}">{{ $i }}</option>
-                @endfor
-            </select>
-        </div>
+                <select class="form-select quiz-text" id="barangay" name="barangay" required>
+                    @foreach($brgy as $b)
+                        <option value="{{ $b }}">{{ $b }}</option>
+                    @endforeach
+                </select>
 
-        <div>
-            <label class="form-label for="gender">Gender</label>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="gender" id="male" value="male">
-                <label class="form-check-label" for="male">Male</label>
+                <input type="text" class="form-control quiz-text" name="voters_id" id="voters_id" autofocus="true" />
             </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="gender" id="female" value="female">
-                <label class="form-check-label" for="female">Female</label>
+        </div>
+        <div class="row">
+            <div class="col-md-12 mt-4 d-flex justify-content-center">
+                <button class="btn btn-primary btn-1" id="next">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="q_card">
+        <div class="row mb-5">
+            <div class="col-md-12">
+                <h3><span id="q_num">1</span> of 18</h3>
             </div>
         </div>
 
-        <div>
-            <label class="form-label for="barangay">Barangay</label>
-            <select class="form-select" id="barangay" name="barangay" required>
-                @foreach($brgy as $b)
-                    <option value="{{ $b }}">{{ $b }}</option>
-                @endforeach
-            </select>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 id="q_text"></h2>
+            </div>
         </div>
 
-        @foreach($questions as $q)
-            <hr>
-            <div class="row">
-                <div class="col-md-12 radio-cont">
-                    <p>{{ $q['question'] }}</p>
-                    <div class="btn-group" role="group">
-                        <input type="radio" class="btn-check" name="{{ $q['id'] }}" id="{{ $q['id'] }}_1" value="1" autocomplete="off">
-                        <label class="btn btn-outline-primary m-0" for="{{ $q['id'] }}_1">Never</label>
+        <div class="row">
+            <div class="col-md-12 mt-5">
+                <div class="btn-group" role="group">
+                    <input type="radio" class="btn-check" id="survey_options_1" name="answer" value="1" autocomplete="off">
+                    <label class="btn btn-primary-radio" for="survey_options_1">Never</label>
 
-                        <input type="radio" class="btn-check" name="{{ $q['id'] }}" id="{{ $q['id'] }}_2" value="2" autocomplete="off">
-                        <label class="btn btn-outline-primary m-0" for="{{ $q['id'] }}_2">Rarely</label>
+                    <input type="radio" class="btn-check" id="survey_options_2" name="answer" value="2" autocomplete="off">
+                    <label class="btn btn-primary-radio" for="survey_options_2">Rarely</label>
 
-                        <input type="radio" class="btn-check" name="{{ $q['id'] }}" id="{{ $q['id'] }}_3" value="3" autocomplete="off">
-                        <label class="btn btn-outline-primary m-0" for="{{ $q['id'] }}_3">Sometimes</label>
+                    <input type="radio" class="btn-check" id="survey_options_3" name="answer" value="3" autocomplete="off">
+                    <label class="btn btn-primary-radio" for="survey_options_3">Sometimes</label>
 
-                        <input type="radio" class="btn-check" name="{{ $q['id'] }}" id="{{ $q['id'] }}_4" value="4" autocomplete="off">
-                        <label class="btn btn-outline-primary m-0" for="{{ $q['id'] }}_4">Often</label>
+                    <input type="radio" class="btn-check" id="survey_options_4" name="answer" value="4" autocomplete="off">
+                    <label class="btn btn-primary-radio" for="survey_options_4">Often</label>
 
-                        <input type="radio" class="btn-check" name="{{ $q['id'] }}" id="{{ $q['id'] }}_5" value="5" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary m-0" for="{{ $q['id'] }}_5">Always</label>
-                    </div>
+                    <input type="radio" class="btn-check" id="survey_options_5" name="answer" value="5" autocomplete="off">
+                    <label class="btn btn-primary-radio" for="survey_options_5">Always</label>
                 </div>
             </div>
-        @endforeach
+        </div>
+    </div>
 
-        <hr>
+    <div id="success">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 id="success_msg1" style="font-size: 4em;"></h1>
+                <h2 id="success_msg2" class="mt-3"></h2>
+            </div>
+        </div>
+    </div>
 
-        <button type="submit" class="btn btn-primary float-right mb-3">Submit</button>
-    </form>
+    <div class="row">
+        <div class="col-md-12 bottom-container">
+            <a href="/"><button class="btn btn-secondary btn-2 mt-2">Go back to home</button></a>
+        </div>
+    </div>
 
+    <div>
+        <input type="hidden" id="questions" value="{{ $questions }}"/>
+
+        <form method="POST" action="{{ route('survey.submit') }}" id="quiz_form">
+            <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+            <input type="hidden" id="frm_name" name="name">
+            <input type="hidden" id="frm_age" name="age">
+            <input type="hidden" id="frm_gender" name="gender">
+            <input type="hidden" id="frm_barangay" name="barangay">
+            <input type="hidden" id="frm_voters_id" name="votersid">
+            <input type="hidden" id="frm_answers" name="answers">
+        </form>
+    </div>
 </div>
+@endsection
 
+@section('scripts')
+<script>
+    var currIndex = 0;
+    var answers = [];
+    var questions = [];
+    $("#success").hide();
+    $("#q_card").hide();
+    $("#age").hide();
+    $("#gender").hide();
+    $("#barangay").hide();
+    $("#voters_id").hide();
+
+    var name, age, gender, barangay, voters_id;
+    var pnum = 1; /* 1: Name, 2: Age, 3: Gender, 4: Barangay, 5: Voters ID Number */
+
+    $(document).ready(function()
+    {
+        questions = JSON.parse($("#questions").val());
+        $("#q_text").text(questions[currIndex].question);
+
+        $(document).on("click", "input:radio[name='answer']", function()
+        {
+            nextQuestion($('input[name="answer"]:checked').val());
+        });
+
+        $(document).on("click", "#next", function()
+        {
+            switch (pnum)
+            {
+                case 1:
+                    name = $("#name").val();
+                    $("#name").hide();
+                    $("#p_text").text("What is your age?");
+                    $("#age").show();
+                    pnum++;
+                    break;
+                case 2:
+                    age = $("#age").val();
+                    $("#age").hide();
+                    $("#p_text").text("What is your gender?");
+                    $("#gender").show();
+                    pnum++;
+                    break;
+                case 3:
+                    gender = $("#gender").val();
+                    $("#gender").hide();
+                    $("#p_text").text("What is your barangay?");
+                    $("#barangay").show();
+                    pnum++;
+                    break;
+                case 4:
+                    barangay = $("#barangay").val();
+                    $("#barangay").hide();
+                    $("#p_text").text("What is your voter's id?");
+                    $("#voters_id").show();
+                    pnum++;
+                    break;
+                case 5:
+                    voters_id = $("#voters_id").val();
+                    $("#voters_id").hide();
+                    $("#p_text").text("All good! Let's now proceed with the questions.");
+                    pnum++;
+                    break;
+                case 6:
+                    $("#p_card").hide();
+                    $("#q_card").show();
+                    pnum++;
+            }
+        });
+    });
+
+    function nextQuestion(answer) {
+        if(answers.length+1 == questions.length)
+        {
+            currIndex++;
+            answers.push(answer);
+
+            $("#q_card").hide();
+            $("#success_msg1").text("How's the quiz?");
+            $("#success_msg2").text("We are currently analyzing your answers.. Please wait for a moment.");
+            $("#success").show(200);
+
+            $("#frm_name").val(name);
+            $("#frm_age").val(age);
+            $("#frm_gender").val(gender);
+            $("#frm_barangay").val(barangay);
+            $("#frm_voters_id").val(voters_id);
+            $("#frm_answers").val(answers);
+
+            setTimeout(function(){
+              $("#quiz_form").submit();
+            }, 1000);
+        } 
+        else
+        {
+            currIndex++;
+            answers.push(answer);
+            $("#q_text").text(questions[currIndex].question);
+            $("#q_num").text(currIndex+1);
+        }
+    }
+</script>
 @endsection

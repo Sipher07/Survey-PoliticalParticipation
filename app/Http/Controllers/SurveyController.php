@@ -103,7 +103,7 @@ class SurveyController extends Controller
 
         return view('survey', [
             'brgy' => $brgy,
-            'questions' => $questions
+            'questions' => json_encode($questions)
         ]);
     }
 
@@ -113,40 +113,45 @@ class SurveyController extends Controller
         $entry->age = $request->age;
         $entry->gender = $request->gender;
         $entry->barangay = $request->barangay;
+        $entry->votersid = $request->votersid;
 
-        $entry->C1 = $request->C1;
-        $entry->C2 = $request->C2;
-        $entry->C3 = $request->C3;
-        $entry->C4 = $request->C4;
-        $entry->C5 = $request->C5;
-        $entry->C6 = $request->C6;
-        $entry->C7 = $request->C7;
-        $entry->C_Score = $this->average(array($request->C1, $request->C2, $request->C3, $request->C4, $request->C5, $request->C6, $request->C7));
+        $answers = explode (",", $request->answers);
 
-        $entry->UC1 = $request->UC1;
-        $entry->UC2 = $request->UC2;
-        $entry->UC3 = $request->UC3;
-        $entry->UC4 = $request->UC4;
-        $entry->UC5 = $request->UC5;
-        $entry->UC6 = $request->UC6;
-        $entry->UC_Score = $this->average(array($request->UC1, $request->UC2, $request->UC3, $request->UC4, $request->UC5, $request->UC6));
+        $entry->C1 = $answers[0];
+        $entry->C2 = $answers[1];
+        $entry->C3 = $answers[2];
+        $entry->C4 = $answers[3];
+        $entry->C5 = $answers[4];
+        $entry->C6 = $answers[5];
+        $entry->C7 = $answers[6];
+        $entry->C_Score = $this->average(array($answers[0], $answers[1], $answers[2], $answers[3], $answers[4], $answers[5], $answers[6]));
 
-        $entry->KS1 = $request->KS1;
-        $entry->KS2 = $request->KS2;
-        $entry->KS3 = $request->KS3;
-        $entry->KS_Score = $this->average(array($request->KS1, $request->KS2, $request->KS3));
+        $entry->UC1 = $answers[7];
+        $entry->UC2 = $answers[8];
+        $entry->UC3 = $answers[9];
+        $entry->UC4 = $answers[10];
+        $entry->UC5 = $answers[11];
+        $entry->UC6 = $answers[12];
+        $entry->UC_Score = $this->average(array($answers[7], $answers[8], $answers[9], $answers[10], $answers[11], $answers[12]));
 
-        $entry->IP1 = $request->IP1;
-        $entry->IP2 = $request->IP2;
-        $entry->IP_Score = $this->average(array($request->IP1, $request->IP2));
+        $entry->KS1 = $answers[13];
+        $entry->KS2 = $answers[14];
+        $entry->KS3 = $answers[15];
+        $entry->KS_Score = $this->average(array($answers[13], $answers[14], $answers[15]));
+
+        $entry->IP1 = $answers[16];
+        $entry->IP2 = $answers[17];
+        $entry->IP_Score = $this->average(array($answers[16], $answers[17]));
+
+        $entry->finalAvg = $this->average($answers);
 
         $entry->save();
 
-        return redirect()->route('survey.success');
+        return redirect()->route('survey.result');
     }
 
     public function success() {
-        return view('survey-success');
+        return view('result');
     }
 
     public function average($arr) {

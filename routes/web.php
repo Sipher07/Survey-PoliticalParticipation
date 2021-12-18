@@ -17,9 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware('guest');
 
-Route::get('/survey', 'App\Http\Controllers\SurveyController@index')->middleware('guest');
-Route::get('/survey/submit', 'App\Http\Controllers\SurveyController@success')->name('survey.success')->middleware('guest');
-Route::post('/survey', 'App\Http\Controllers\SurveyController@submit')->name('survey.submit')->middleware('guest');
+Route::get('/quiz', 'App\Http\Controllers\SurveyController@index')->middleware('guest');
+Route::get('/quiz/result', 'App\Http\Controllers\SurveyController@success')->name('survey.result')->middleware('guest');
+Route::post('/quiz/submit', 'App\Http\Controllers\SurveyController@submit')->name('survey.submit')->middleware('guest');
 
 Route::post('/login', 'App\Http\Controllers\AuthController@authenticate')->name('post.login');
 Route::post('/logout', 'App\Http\Controllers\AuthController@logout')->name('logout');

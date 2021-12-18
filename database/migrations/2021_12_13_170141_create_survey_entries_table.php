@@ -19,6 +19,7 @@ class CreateSurveyEntriesTable extends Migration
             $table->integer('age')->nullable();
             $table->char('gender')->nullable();
             $table->string('barangay')->nullable();
+            $table->string('votersid')->nullable();
 
             $table->float('C1')->nullable();
             $table->float('C2')->nullable();
@@ -45,6 +46,8 @@ class CreateSurveyEntriesTable extends Migration
             $table->float('IP1')->nullable();
             $table->float('IP2')->nullable();
             $table->float('IP_Score')->nullable();
+
+            $table->float('finalAvg')->nullable();
 
             $table->timestamps();
         });
