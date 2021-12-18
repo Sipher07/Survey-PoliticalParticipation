@@ -177,10 +177,6 @@
 			});
 
 			cScoreChart.render();
-			$("#c_score_cont").show();
-			$("#uc_score_cont").hide();
-			$("#ks_score_cont").hide();
-			$("#ip_score_cont").hide();
 
 			$(document).on("click", "#c_btn", function() {
 				ucScoreChart.destroy();
@@ -206,10 +202,6 @@
 				});
 
 				cScoreChart.render();
-				$("#c_score_cont").show();
-				$("#uc_score_cont").hide();
-				$("#ks_score_cont").hide();
-				$("#ip_score_cont").hide();
 			});
 
 			$(document).on("click", "#uc_btn", function() {
@@ -236,10 +228,6 @@
 				});
 
 				ucScoreChart.render();
-				$("#c_score_cont").hide();
-				$("#uc_score_cont").show();
-				$("#ks_score_cont").hide();
-				$("#ip_score_cont").hide();
 			});
 
 			$(document).on("click", "#ks_btn", function() {
@@ -266,10 +254,6 @@
 				});
 
 				ksScoreChart.render();
-				$("#c_score_cont").hide();
-				$("#uc_score_cont").hide();
-				$("#ks_score_cont").show();
-				$("#ip_score_cont").hide();
 			});
 
 			$(document).on("click", "#ip_btn", function() {
@@ -296,10 +280,6 @@
 				});
 
 				ipScoreChart.render();
-				$("#c_score_cont").hide();
-				$("#uc_score_cont").hide();
-				$("#ks_score_cont").hide();
-				$("#ip_score_cont").show();
 			});
 			
 		});

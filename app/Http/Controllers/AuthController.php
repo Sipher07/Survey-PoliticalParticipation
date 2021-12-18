@@ -29,7 +29,7 @@ class AuthController extends Controller
         }
 
         return back()->withErrors([
-            'error' => $valid['message'],
+            'error' => 'username or password is invalid',
         ]);
     }
 

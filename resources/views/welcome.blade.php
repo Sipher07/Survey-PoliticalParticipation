@@ -27,10 +27,8 @@
         <div class="col-md-12 mt-4 d-flex justify-content-center">
             <a href="/quiz"><button class="btn btn-primary btn-1">Take the quiz</button></a>
         </div>
-        <!-- <div class="col-md-12 mt-2 d-flex justify-content-center">
-            <button class="btn btn-secondary btn-2">I'm done. View my previous result.</button>
-        </div> -->
     </div>
+
 
     <div class="row">
         <div class="col-md-12 bottom-container">
@@ -42,6 +40,7 @@
         </div>
     </div>
 </div>
+
 
 <div class="modal fade" id="loginModal" tabindex="-1">
 	<div class="modal-dialog">
