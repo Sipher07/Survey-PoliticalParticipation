@@ -25,5 +25,8 @@ Route::post('/login', 'App\Http\Controllers\AuthController@authenticate')->name(
 Route::post('/logout', 'App\Http\Controllers\AuthController@logout')->name('logout');
 
 Route::prefix('admin')->group(function() {
-	Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('index')->middleware('user.session');;
+	Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('index')->middleware('user.session');
+	Route::get('/participants', 'App\Http\Controllers\DashboardController@participants')->name('participants')->middleware('user.session');
+	Route::get('/analysis', 'App\Http\Controllers\DashboardController@analysis')->name('analysis')->middleware('user.session');
+	Route::get('/analysis/cluster/{k}/{col1}/{col2}', 'App\Http\Controllers\DashboardController@cluster')->name('analysis.cluster')->middleware('user.session');
 });

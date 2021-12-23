@@ -113,6 +113,7 @@ class SurveyController extends Controller
         $entry->age = $request->age;
         $entry->gender = $request->gender;
         $entry->barangay = $request->barangay;
+        $entry->registeredvoter = $request->registeredvoter;
         $entry->votersid = $request->votersid;
 
         $answers = explode (",", $request->answers);

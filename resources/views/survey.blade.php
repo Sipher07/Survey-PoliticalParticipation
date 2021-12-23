@@ -35,6 +35,11 @@
                     <option value="Female">Female</option>
                 </select>
 
+                <select class="form-select quiz-text" id="registered_voter" name="registered_voter">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+
                 <select class="form-select quiz-text" id="barangay" name="barangay" required>
                     @foreach($brgy as $b)
                         <option value="{{ $b }}">{{ $b }}</option>
@@ -110,6 +115,7 @@
             <input type="hidden" id="frm_age" name="age">
             <input type="hidden" id="frm_gender" name="gender">
             <input type="hidden" id="frm_barangay" name="barangay">
+            <input type="hidden" id="frm_registered_voter" name="registeredvoter">
             <input type="hidden" id="frm_voters_id" name="votersid">
             <input type="hidden" id="frm_answers" name="answers">
         </form>
@@ -127,9 +133,10 @@
     $("#age").hide();
     $("#gender").hide();
     $("#barangay").hide();
+    $("#registered_voter").hide();
     $("#voters_id").hide();
 
-    var name, age, gender, barangay, voters_id;
+    var name, age, gender, barangay, voters_id, registered_voter;
     var pnum = 1; /* 1: Name, 2: Age, 3: Gender, 4: Barangay, 5: Voters ID Number */
 
     $(document).ready(function()
@@ -156,7 +163,7 @@
                 case 2:
                     age = $("#age").val();
                     $("#age").hide();
-                    $("#p_text").text("What is your gender?");
+                    $("#p_text").text("What is your sex?");
                     $("#gender").show();
                     pnum++;
                     break;
@@ -170,17 +177,24 @@
                 case 4:
                     barangay = $("#barangay").val();
                     $("#barangay").hide();
+                    $("#p_text").text("Are you a registered voter?");
+                    $("#registered_voter").show();
+                    pnum++;
+                    break;
+                case 5:
+                    registered_voter = $("#registered_voter").val();
+                    $("#registered_voter").hide();
                     $("#p_text").text("What is your voter's id?");
                     $("#voters_id").show();
                     pnum++;
                     break;
-                case 5:
+                case 6:
                     voters_id = $("#voters_id").val();
                     $("#voters_id").hide();
                     $("#p_text").text("All good! Let's now proceed with the questions.");
                     pnum++;
                     break;
-                case 6:
+                case 7:
                     $("#p_card").hide();
                     $("#q_card").show();
                     pnum++;
@@ -204,6 +218,7 @@
             $("#frm_gender").val(gender);
             $("#frm_barangay").val(barangay);
             $("#frm_voters_id").val(voters_id);
+            $("#frm_registered_voter").val(registered_voter);
             $("#frm_answers").val(answers);
 
             setTimeout(function(){

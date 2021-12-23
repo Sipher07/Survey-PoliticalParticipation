@@ -19,6 +19,7 @@ class CreateSurveyEntriesTable extends Migration
             $table->integer('age')->nullable();
             $table->char('gender')->nullable();
             $table->string('barangay')->nullable();
+            $table->boolean('registeredvoter')->nullable();
             $table->string('votersid')->nullable();
 
             $table->float('C1')->nullable();
