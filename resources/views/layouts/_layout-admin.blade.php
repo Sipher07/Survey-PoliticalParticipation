@@ -46,7 +46,7 @@
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Political Participation Analyzer 2021</div>
                             <div>
-                                Prototype System for Thesis &nbsp; | &nbsp; Presented by Doroteo, Medina and Takano
+                                Prototype System for Thesis &nbsp; | &nbsp; Presented by Doroteo, Medina and Fausto
                             </div>
                         </div>
                     </div>
