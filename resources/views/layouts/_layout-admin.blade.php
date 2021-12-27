@@ -4,6 +4,24 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('favicon/apple-icon-57x57.png') }}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('favicon/apple-icon-60x60.png') }}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('favicon/apple-icon-72x72.png') }}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('favicon/apple-icon-76x76.png') }}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('favicon/apple-icon-114x114.png') }}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('favicon/apple-icon-120x120.png') }}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('favicon/apple-icon-144x144.png') }}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('favicon/apple-icon-152x152.png') }}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon/apple-icon-180x180.png') }}">
+        <link rel="icon" type="image/png" sizes="192x192"  href="{{ asset('favicon/android-icon-192x192.png') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon//favicon-32x32.png') }}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('favicon/favicon-96x96.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="/{{ asset('favicon/favicon-16x16.png') }}">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        
         <title>Dashboard | Political Participation Analyzer</title>
 
         <!-- Fonts -->
@@ -51,6 +69,54 @@
                         </div>
                     </div>
                 </footer>
+            </div>
+        </div>
+
+        <div class="modal fade" id="PPModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h3>Faces of Political Participation</h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                    <h5><b>Conventional Type of Political Participation</b></h5>
+                    <p>
+                        By the word itself, “conventional” is based on or in accordance with what is generally done or believed.
+                    The use of established institutions of representative government, especially campaigning for candidates 
+                    and voting in elections. These are activities that we expect of responsible citizens. 
+                    Most people only participate in elections every few years. 
+                    People who are deeply invested in politics are more inclined to participate on a regular basis.
+                    Voting, volunteering for a political campaign, making a campaign donation, subscribing to activist groups, 
+                    and serving in public office are all examples of Conventional Political Participation.
+                    </p>
+
+                    <h5><b>Unconventional Type of Political Participation</b></h5>
+                    <p> 
+                    Challenges or defies established institutions or the dominant culture. 
+                    They usually engage in protesting, boycotting, and refusing to abide by certain laws in which most people choose to participate conventionally, by voting, donating money to candidates for political office, or even running for office.  
+                    These are activities that are legal but are frequently regarded as undesirable. 
+                    Young people, students, and others who have serious reservations about a regime's 
+                    policies are more inclined to participate in nontraditional ways. 
+                    Signing petitions, supporting boycotts, and staging demonstrations and protests 
+                    are all examples of unconventional political participation.
+                    </p>
+
+                    <h5><b>Knowledge Seeking Type of Political Participation</b></h5>
+                    <p> 
+                    Participants used empirical political evidence that contributes to more stable and consistent political attitudes, 
+                    helps citizens achieve their own interests and make decisions that conform with their attitudes and preferences,
+                    promotes support for democratic values, facilitates trust in the political system, and motivates political participation. 
+                    </p>
+
+                    <h5><b>Influential Type of Political Participation</b></h5>
+                    <p> 
+                    Education, gender, age, peers, and family are some of the many factors that affect their political participation and decision. 
+                    </p>
+
+                    </div>
+                </div>
             </div>
         </div>
 

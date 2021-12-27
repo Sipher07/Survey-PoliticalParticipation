@@ -33,8 +33,8 @@
     <div class="row">
         <div class="col-md-12 bottom-container">
             <h3>Want to know more?</h3>
-            <button class="btn btn-primary btn-2 mt-2">Political Participation</button>
-            <button class="btn btn-primary btn-2 mt-2">About the Project</button>
+            <button class="btn btn-primary btn-2 mt-2"  data-bs-toggle="modal" data-bs-target="#PPModal">Political Participation</button>
+            <button class="btn btn-primary btn-2 mt-2"  data-bs-toggle="modal" data-bs-target="#AboutModal">About the Project</button>
             <hr>
             <button class="btn btn-secondary btn-2 mt-2" data-bs-toggle="modal" data-bs-target="#loginModal">Admin Login</button>
         </div>
@@ -65,6 +65,55 @@
                         <button type="submit" class="btn btn-block btn-primary float-right">Log In</button>
                     </div>
 			    </form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="AboutModal" tabindex="-1">
+	<div class="modal-dialog">
+		<div class="modal-content">
+            <div class="modal-header">
+                <h3>About the project</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+			<div class="modal-body">
+            <p>
+               About the project
+                </p>
+               
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="PPModal" tabindex="-1">
+	<div class="modal-dialog">
+		<div class="modal-content">
+            <div class="modal-header">
+                <h3>Political Participation</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+			<div class="modal-body">
+				<p>
+                Political participation refers to a variety of public-spirited activities that aim to impact public policy, 
+                either directly or indirectly, by influencing the people who decide those policies. 
+                It involves legal activities by citizens that are more or less directly targeted at influencing the selection
+                 of governmental personnel and/or the actions they take.  Political campaigning, demonstrating, voting, rioting, 
+                 providing money to candidates or causes, contacting public officials, petitioning, 
+                 collaborating with others on issues, and other comparable behaviors are all included.
+                </p>
+                 <p>
+                     Having said that, participating in politics is one of the most effective methods for regular people
+                  to make a significant difference in their communities. Citizens who are more involved in their 
+                  country's politics will have a better understanding of where the government is going wrong. 
+                  They will be better positioned to combat political challenges if they have a deeper understanding of them. 
+                  Consequently, the government will have an in-depth knowledge of why inhabitants are upset and it will be far
+                   more difficult for a government to disregard the needs of the people. As a result,
+                    more political participation should indicate that more is being done to solve political and social issues.
+                </p>
 			</div>
 		</div>
 	</div>

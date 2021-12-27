@@ -117,6 +117,7 @@ class SurveyController extends Controller
         $entry->votersid = $request->votersid;
 
         $answers = explode (",", $request->answers);
+        $category_result = array();
 
         $entry->C1 = $answers[0];
         $entry->C2 = $answers[1];
@@ -126,6 +127,7 @@ class SurveyController extends Controller
         $entry->C6 = $answers[5];
         $entry->C7 = $answers[6];
         $entry->C_Score = $this->average(array($answers[0], $answers[1], $answers[2], $answers[3], $answers[4], $answers[5], $answers[6]));
+        $category_result['C_Score'] = $entry->C_Score;
 
         $entry->UC1 = $answers[7];
         $entry->UC2 = $answers[8];
@@ -134,21 +136,26 @@ class SurveyController extends Controller
         $entry->UC5 = $answers[11];
         $entry->UC6 = $answers[12];
         $entry->UC_Score = $this->average(array($answers[7], $answers[8], $answers[9], $answers[10], $answers[11], $answers[12]));
+        $category_result['UC_Score'] = $entry->UC_Score;
 
         $entry->KS1 = $answers[13];
         $entry->KS2 = $answers[14];
         $entry->KS3 = $answers[15];
         $entry->KS_Score = $this->average(array($answers[13], $answers[14], $answers[15]));
+        $category_result['KS_Score'] = $entry->KS_Score;
 
         $entry->IP1 = $answers[16];
         $entry->IP2 = $answers[17];
         $entry->IP_Score = $this->average(array($answers[16], $answers[17]));
+        $category_result['IP_Score'] = $entry->IP_Score;
 
         $entry->finalAvg = $this->average($answers);
 
-        $entry->save();
+        $entry->save();      
 
-        return redirect()->route('survey.result');
+        return view('result', [
+            'pp' => array_search(max($category_result), $category_result)
+        ]);
     }
 
     public function success() {

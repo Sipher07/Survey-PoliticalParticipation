@@ -18,6 +18,10 @@
         <div class="sb-nav-link-icon"><i class="fas fa-chart-bar"></i></div>
         Cluster Analysis
     </a>
+	<a class="nav-link" data-bs-toggle="modal" data-bs-target="#PPModal">
+        <div class="sb-nav-link-icon"><i class="fas fa-list"></i></div>
+        Faces of Political Participation
+    </a>
 </div>
 @endsection
 
@@ -45,7 +49,7 @@
                                     <th>Sex</th>
                                     <th>Barangay</th>
                                     <th>Is a Registered Voter?</th>
-                                    <th>Voter's ID</th>
+                                    
                                 </tr>
                             </thead>
                             <tfoot>
@@ -55,7 +59,7 @@
                                     <th>Sex</th>
                                     <th>Barangay</th>
                                     <th>Is a Registered Voter?</th>
-                                    <th>Voter's ID</th>
+                                    
                                 </tr>
                             </tfoot>
                             <tbody>
@@ -70,7 +74,7 @@
 	                                   	@else
 	                                   		<td><span class="badge bg-danger">No</span></td>
 	                                   	@endif
-	                                    <td>{{ $p->votersid }}</td>
+	                                   
 	                                </tr>
 			                    @endforeach
                             </tbody>

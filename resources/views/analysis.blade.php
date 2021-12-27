@@ -18,6 +18,10 @@
         <div class="sb-nav-link-icon"><i class="fas fa-chart-bar"></i></div>
         Cluster Analysis
     </a>
+	<a class="nav-link" data-bs-toggle="modal" data-bs-target="#PPModal">
+        <div class="sb-nav-link-icon"><i class="fas fa-list"></i></div>
+        Faces of Political Participation
+    </a>
 </div>
 @endsection
 
