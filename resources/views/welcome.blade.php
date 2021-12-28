@@ -80,7 +80,7 @@
 
 			<div class="modal-body">
             <p>
-               About the project
+            The purpose of this study is to gather verities and insights as well as an extensive analysis in regards to the level of Political Participation of the Citizens using K-Means Clustering Algorithm in Muntinlupa City, Philippines, 2021
                 </p>
                
 			</div>
